@@ -20,8 +20,10 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this);
-    Timer(Duration(milliseconds: 5000),
-        () => Navigator.pushNamed(context, LandingPage.routeName));
+    Timer(Duration(milliseconds: 5000), () {
+      Navigator.pushReplacementNamed(context, LandingPage.routeName);
+      // Navigator.pop(context);
+    });
   }
 
   @override
